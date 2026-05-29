@@ -6,6 +6,18 @@ settings in one place. The product persona is **Sarah Johnson** (patient #MB-482
 goal is a calm, trustworthy, high-clarity experience modeled on the best patient products —
 **MyChart, Zocdoc, One Medical, and Teladoc**.
 
+<img width="1440" height="777" alt="Screenshot 2026-05-29 at 6 10 34 PM" src="https://github.com/user-attachments/assets/38c3bed3-3816-462b-b019-9440f9134658" />
+
+<img width="1440" height="776" alt="Screenshot 2026-05-29 at 6 10 49 PM" src="https://github.com/user-attachments/assets/eb88b199-9fc8-4a01-89b9-5a7f35b6497f" />
+
+<img width="1440" height="777" alt="Screenshot 2026-05-29 at 6 11 08 PM" src="https://github.com/user-attachments/assets/9037f4cc-af31-4d09-a150-87daa0e8f149" />
+
+<img width="1293" height="698" alt="Screenshot 2026-05-29 at 6 11 28 PM" src="https://github.com/user-attachments/assets/06194219-86a4-4719-9d1d-d72dad0a0089" />
+
+<img width="1440" height="776" alt="Screenshot 2026-05-29 at 6 11 49 PM" src="https://github.com/user-attachments/assets/9b695eac-392d-4f0e-aaec-62c5ea44762d" />
+
+<img width="1440" height="776" alt="Screenshot 2026-05-29 at 6 12 03 PM" src="https://github.com/user-attachments/assets/50a1457e-af07-4187-8818-150a4036c2a3" />
+
 This repository is the *elevated, portfolio-grade* redesign of the original MedBridge generator. It
 preserves every workflow and the full information architecture of the source, then raises the visual
 fidelity, spacing, typography, accessibility, and component consistency to production quality.
