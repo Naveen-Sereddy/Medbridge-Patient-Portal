@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:20px;background:#fff;font-family:var(--font-sans);color:var(--fg-1)}
+  .grid{display:grid;grid-template-columns:1fr 1.15fr;gap:16px}
+  .panel{border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;background:#fff}
+  .dark{background:var(--sidebar-bg);border-color:transparent}
+  .lbl{font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);margin:0 0 6px}
+  .stack{display:flex;flex-direction:column}
+  .chips{display:flex;gap:7px;margin-top:6px}
+  .chip{flex:1;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:600;color:#fff}
+</style></head><body>
+<div class="grid">
+  <div class="stack">
+    <div class="lbl">Primary lockup</div>
+    <div class="panel" style="padding:16px;height:230px"><img src="../assets/logo-stacked.svg" height="202" alt="MedBridge stacked logo"></div>
+  </div>
+  <div class="stack" style="gap:16px">
+    <div>
+      <div class="lbl">Horizontal · light</div>
+      <div class="panel" style="height:76px"><img src="../assets/logo-full.svg" height="48" alt="MedBridge logo"></div>
+    </div>
+    <div>
+      <div class="lbl">Dark · horizontal &amp; mark</div>
+      <div class="panel dark" style="height:76px;gap:30px"><img src="../assets/logo-full-white.svg" height="46" alt="MedBridge white logo"><img src="../assets/logo-mark-white.svg" height="44" alt="MedBridge mark"></div>
+    </div>
+    <div>
+      <div class="lbl">Brand colors</div>
+      <div class="chips">
+        <span class="chip" style="background:#178A9A">#178A9A</span>
+        <span class="chip" style="background:#16324F">#16324F</span>
+        <span class="chip" style="background:#1D6FDB">#1D6FDB</span>
+        <span class="chip" style="background:#0F1B2D">#0F1B2D</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

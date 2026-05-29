@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../components.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>body{margin:0;padding:20px;background:#fff;font-family:var(--font-sans);color:var(--fg-1)}
+.lbl{font-size:11px;color:var(--fg-3);margin-top:10px}.wrap{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+</style></head><body>
+<div class="wrap" style="gap:28px">
+<label style="display:flex;align-items:center;gap:9px;font-size:14px"><input type="checkbox" class="checkbox" checked>Remember me</label>
+<div style="display:flex;align-items:center;gap:10px"><button class="toggle" role="switch" aria-checked="true"></button><span style="font-size:14px">Email alerts on</span></div>
+<div style="display:flex;align-items:center;gap:10px"><button class="toggle" role="switch" aria-checked="false"></button><span style="font-size:14px;color:var(--fg-3)">SMS off</span></div>
+</div>
+<div style="margin-top:16px"><div class="pill-tabs"><button class="pill-tab" aria-selected="true">Active (5)</button><button class="pill-tab">History</button></div></div>
+<div class="lbl">Checkbox · toggle switch (on/off) · segmented pill-tabs.</div><script>window.lucide&&lucide.createIcons()</script></body></html>
