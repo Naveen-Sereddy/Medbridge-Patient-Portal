@@ -1,0 +1,8 @@
+<svg width="300" height="250" viewBox="0 0 300 250" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MedBridge">
+  <rect x="139" y="10" width="22" height="80" rx="2" fill="#178A9A"></rect>
+  <rect x="111" y="39" width="78" height="22" rx="2" fill="#178A9A"></rect>
+  <path d="M30 145 C108 104 192 104 270 145 C198 117 102 117 30 145 Z" fill="#16324F"></path>
+  <rect x="105" y="112" width="13" height="52" fill="#16324F"></rect>
+  <rect x="182" y="112" width="13" height="52" fill="#16324F"></rect>
+  <text x="150" y="228" text-anchor="middle" font-family="Montserrat, &#39;Hanken Grotesk&#39;, sans-serif" font-weight="800" font-size="46" letter-spacing="2" fill="#16324F">MEDBRIDGE</text>
+</svg>

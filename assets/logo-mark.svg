@@ -1,0 +1,10 @@
+<svg width="300" height="180" viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MedBridge">
+  
+  <rect x="139" y="14" width="22" height="80" rx="2" fill="#178A9A"></rect>
+  <rect x="111" y="43" width="78" height="22" rx="2" fill="#178A9A"></rect>
+  
+  <path d="M30 149 C108 108 192 108 270 149 C198 121 102 121 30 149 Z" fill="#16324F"></path>
+  
+  <rect x="105" y="116" width="13" height="52" fill="#16324F"></rect>
+  <rect x="182" y="116" width="13" height="52" fill="#16324F"></rect>
+</svg>

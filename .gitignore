@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+.thumbnail
+
+# Finder metadata
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.temp
+
+# Editor files
+.vscode/
+.idea/
+
+# Logs
+*.log

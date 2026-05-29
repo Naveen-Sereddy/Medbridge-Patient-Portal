@@ -1,0 +1,159 @@
+/* ============================================================================
+   MedBridge Design System — Foundations
+   Colors + Typography + Spacing + Elevation tokens
+   Source of truth: MedBridge Figma Plugin (code.js). Palette preserved,
+   scales elevated to portfolio fidelity. WCAG 2.1 AA verified contrasts.
+   ============================================================================ */
+
+/* Primary font: Hanken Grotesk (elevated substitute for the original Inter).
+   Load via Google Fonts in each HTML file:
+   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+   See README "Visual Foundations" for the substitution note. */
+
+:root {
+  /* ---- BRAND (MedBridge Blue) ------------------------------------------- */
+  --brand-50:  #EFF6FF;   /* tints, selected-row bg, info surfaces */
+  --brand-100: #DBEAFE;
+  --brand-200: #BFDBFE;
+  --brand-400: #5A9BF0;
+  --brand-500: #2E80E6;
+  --brand-600: #1D6FDB;   /* PRIMARY — buttons, links, active nav */
+  --brand-700: #1555B0;   /* hover / pressed */
+  --brand-800: #114390;
+
+  /* ---- NEUTRALS (Slate) ------------------------------------------------- */
+  --n-900: #1E293B;   /* primary text / headings */
+  --n-800: #293548;
+  --n-700: #334155;   /* secondary headings, strong body */
+  --n-600: #475569;   /* body text */
+  --n-500: #64748B;   /* muted text, labels (AA on white) */
+  --n-400: #94A3B8;   /* placeholder, tertiary, disabled text */
+  --n-300: #CBD5E1;   /* borders-strong, dividers */
+  --n-200: #E2E8F0;   /* default border */
+  --n-100: #F1F5F9;   /* subtle fill, hover bg */
+  --n-50:  #F8FAFC;   /* page background, table header */
+  --white: #FFFFFF;
+
+  /* ---- SIDEBAR (deep navy) ---------------------------------------------- */
+  --sidebar-bg:   #0F1B2D;
+  --sidebar-bg-2: #142339;   /* hover row */
+  --sidebar-div:  #1E2E48;
+  --sidebar-text: #94A3B8;
+  --sidebar-text-strong: #E2E8F0;
+
+  /* ---- SEMANTIC ACCENTS -------------------------------------------------- */
+  --teal-600:   #0D9488;   --teal-bg:   #EFFCFB;
+  --green-600:  #059669;   --green-bg:  #ECFDF5;   /* success */
+  --amber-700:  #B46200;   --amber-bg:  #FFFBEB;   /* warning (AA on white) */
+  --red-700:    #B91C1C;   --red-bg:    #FEF2F2;   /* danger/error */
+  --purple-700: #6D28D9;   --purple-bg: #F5F3FF;   /* info/new */
+
+  /* ---- SEMANTIC ROLES ---------------------------------------------------- */
+  --bg-page:        var(--n-50);
+  --bg-surface:     var(--white);
+  --bg-subtle:      var(--n-100);
+  --fg-1:           var(--n-900);   /* primary text */
+  --fg-2:           var(--n-600);   /* secondary text */
+  --fg-3:           var(--n-500);   /* muted text */
+  --fg-disabled:    var(--n-400);
+  --border:         var(--n-200);
+  --border-strong:  var(--n-300);
+  --accent:         var(--brand-600);
+  --accent-hover:   var(--brand-700);
+  --focus-ring:     #2E80E6;        /* 3px outline for keyboard focus */
+
+  /* ---- TYPOGRAPHY -------------------------------------------------------- */
+  --font-sans: "Hanken Grotesk", "Inter", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Type scale (1.20 minor-third, elevated from the cramped original) */
+  --text-display: 44px;  /* hero (auth screens) */
+  --text-h1:      30px;  /* page-defining titles */
+  --text-h2:      22px;  /* section / greeting */
+  --text-h3:      18px;  /* card titles */
+  --text-title:   16px;  /* sub-section labels */
+  --text-body-lg: 15px;  /* lead body */
+  --text-body:    14px;  /* default body / controls */
+  --text-sm:      13px;  /* secondary / table cells */
+  --text-xs:      12px;  /* meta, captions */
+  --text-2xs:     11px;  /* eyebrow labels, badges */
+
+  --leading-tight: 1.2;
+  --leading-snug:  1.35;
+  --leading-normal:1.5;
+  --leading-relaxed:1.6;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semi:    600;
+  --weight-bold:    700;
+
+  --tracking-eyebrow: 0.06em;  /* uppercase labels */
+  --tracking-tight:  -0.01em;  /* large display */
+
+  /* ---- SPACING (4px base) ------------------------------------------------ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ---- RADII ------------------------------------------------------------- */
+  --radius-sm: 6px;    /* inputs, small chips */
+  --radius-md: 8px;    /* buttons, fields */
+  --radius-lg: 12px;   /* cards */
+  --radius-xl: 16px;   /* modals, hero cards */
+  --radius-pill: 999px;
+
+  /* ---- ELEVATION (layered, soft) ---------------------------------------- */
+  --shadow-xs: 0 1px 2px rgba(15, 27, 45, 0.05);
+  --shadow-sm: 0 1px 3px rgba(15, 27, 45, 0.06), 0 1px 2px rgba(15, 27, 45, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 27, 45, 0.07), 0 2px 4px rgba(15, 27, 45, 0.04);
+  --shadow-lg: 0 12px 28px rgba(15, 27, 45, 0.10), 0 4px 8px rgba(15, 27, 45, 0.05);
+  --shadow-xl: 0 24px 48px rgba(15, 27, 45, 0.14), 0 8px 16px rgba(15, 27, 45, 0.06);
+  --shadow-focus: 0 0 0 3px rgba(46, 128, 230, 0.35);
+
+  /* ---- LAYOUT METRICS ---------------------------------------------------- */
+  --sidebar-w: 264px;
+  --topnav-h: 68px;
+  --content-pad: 32px;
+
+  /* ---- MOTION ------------------------------------------------------------ */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --dur-slow: 280ms;
+}
+
+/* ============================================================================
+   SEMANTIC TYPE CLASSES — apply directly or use as reference
+   ============================================================================ */
+.ds-display { font-size: var(--text-display); font-weight: var(--weight-bold);
+  line-height: var(--leading-tight); letter-spacing: var(--tracking-tight); color: var(--fg-1); }
+.ds-h1 { font-size: var(--text-h1); font-weight: var(--weight-bold);
+  line-height: var(--leading-tight); letter-spacing: var(--tracking-tight); color: var(--fg-1); }
+.ds-h2 { font-size: var(--text-h2); font-weight: var(--weight-semi);
+  line-height: var(--leading-snug); color: var(--fg-1); }
+.ds-h3 { font-size: var(--text-h3); font-weight: var(--weight-semi);
+  line-height: var(--leading-snug); color: var(--fg-1); }
+.ds-title { font-size: var(--text-title); font-weight: var(--weight-semi);
+  line-height: var(--leading-snug); color: var(--fg-1); }
+.ds-body { font-size: var(--text-body); font-weight: var(--weight-regular);
+  line-height: var(--leading-normal); color: var(--fg-2); }
+.ds-sm { font-size: var(--text-sm); font-weight: var(--weight-regular);
+  line-height: var(--leading-normal); color: var(--fg-2); }
+.ds-eyebrow { font-size: var(--text-2xs); font-weight: var(--weight-semi);
+  text-transform: uppercase; letter-spacing: var(--tracking-eyebrow); color: var(--fg-3); }
+.ds-meta { font-size: var(--text-xs); font-weight: var(--weight-regular);
+  line-height: var(--leading-normal); color: var(--fg-3); }
+
+/* Tabular figures for clinical data / money / vitals */
+.ds-num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
