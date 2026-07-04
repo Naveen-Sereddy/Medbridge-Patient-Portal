@@ -60,4 +60,4 @@ Just open `MedBridge Patient Portal.html` in any modern browser. No build step, 
 
 ## Author
 
-Naveen Madhav — [github.com/Naveen-Madhav](https://github.com/Naveen-Madhav)
+Naveen Sereddy — [github.com/Naveen-Sereddy](https://github.com/Naveen-Sereddy)
