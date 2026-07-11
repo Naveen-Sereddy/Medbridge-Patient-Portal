@@ -1,5 +1,12 @@
 /* MedBridge Portal — Notifications, Settings (Profile/Security/Notif prefs), Help, Profile */
 
+const NOTIF_ACTION_ROUTE = {
+  "View Appointment": "appt-details", "View Details": "appt-details",
+  "View Results": "tests", "Request Refill": "rx-detail",
+  "Pay Now": "invoice", "View Invoice": "invoice",
+  "Read Message": "thread", "View Document": "files",
+};
+
 function NotificationsScreen({ go }) {
   return (
     <PageShell route="notifications" go={go} title="Notifications" sub="4 unread">
@@ -21,7 +28,8 @@ function NotificationsScreen({ go }) {
                         <span style={{ fontSize: 12, color: "var(--n-400)", flex: "none", whiteSpace: "nowrap", lineHeight: 1.35 }}>{it.time}</span></div>
                       <div style={{ fontSize: 13, color: "var(--fg-2)", marginTop: 6, lineHeight: 1.5 }}>{it.body}</div>
                       <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
-                        {it.actions.map((a, ai) => <Button key={ai} variant={ai === 0 ? "outline" : "ghost"} size="sm">{a}</Button>)}
+                        {it.actions.map((a, ai) => <Button key={ai} variant={ai === 0 ? "outline" : "ghost"} size="sm"
+                          onClick={NOTIF_ACTION_ROUTE[a] ? () => go(NOTIF_ACTION_ROUTE[a]) : undefined}>{a}</Button>)}
                       </div>
                     </div>
                   </div>

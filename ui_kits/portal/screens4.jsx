@@ -185,7 +185,7 @@ function MessagesInboxScreen({ go }) {
         <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", background: "var(--bg-page)" }}>
           <EmptyState icon="messages-square" title="Select a conversation"
             body="Choose a conversation from the list to view your secure messages with your care team."
-            action={<Button icon="pencil">New Message</Button>} />
+            action={<Button icon="pencil" onClick={() => go("thread")}>New Message</Button>} />
         </div>
       </div>
     </PageShell>
