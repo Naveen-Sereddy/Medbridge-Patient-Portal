@@ -14,7 +14,17 @@ const SCREENS = {
   notifications: NotificationsScreen,
   settings: SettingsProfileScreen, security: SecurityScreen, "notif-settings": NotifSettingsScreen,
   help: HelpScreen,
+  "m-login": MobileLoginScreen, "m-home": MobileHomeScreen, "m-appointments": MobileAppointmentsScreen,
+  "m-book": MobileBookScreen, "m-appt-confirmed": MobileApptConfirmedScreen,
+  "m-prescriptions": MobilePrescriptionsScreen, "m-messages": MobileMessagesScreen, "m-thread": MobileThreadScreen,
 };
+
+// Screens a patient actually reaches for on a phone — quick actions and status checks,
+// not the desk-bound tasks (billing reconciliation, provider research, full records review).
+const MOBILE_ROUTES = new Set([
+  "m-login", "m-home", "m-appointments", "m-book", "m-appt-confirmed", "m-prescriptions", "m-messages", "m-thread",
+]);
+const isMobileViewport = () => window.innerWidth <= 600;
 
 const DIRECTORY = [
   { group: "Authentication", items: [["login","Login"],["forgot","Forgot Password"],["reset","Reset Password"]] },
@@ -27,6 +37,7 @@ const DIRECTORY = [
   { group: "Billing", items: [["billing","Billing"],["invoice","Invoice Detail"],["payment-success","Payment — Success"]] },
   { group: "Messages", items: [["messages","Inbox — Empty"],["thread","Message Thread"]] },
   { group: "Account", items: [["notifications","Notifications"],["settings","Settings — Profile"],["security","Settings — Security"],["notif-settings","Settings — Notifications"],["help","Help Center"]] },
+  { group: "Mobile", items: [["m-login","Mobile — Sign in"],["m-home","Mobile — Home"],["m-appointments","Mobile — Visits"],["m-book","Mobile — Book"],["m-appt-confirmed","Mobile — Confirmed"],["m-prescriptions","Mobile — Prescriptions"],["m-messages","Mobile — Messages"],["m-thread","Mobile — Thread"]] },
 ];
 
 function ScreenLauncher({ route, go }) {
@@ -42,7 +53,7 @@ function ScreenLauncher({ route, go }) {
         <div style={{ position: "fixed", bottom: 84, right: 20, zIndex: 1000, width: 320, maxHeight: "76vh", overflowY: "auto",
           background: "#fff", borderRadius: 14, boxShadow: "var(--shadow-xl)", border: "1px solid var(--border)", padding: 16 }}>
           <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 4 }}>MedBridge — All Screens</div>
-          <div style={{ fontSize: 11.5, color: "var(--fg-3)", marginBottom: 14 }}>30 screens · click to preview</div>
+          <div style={{ fontSize: 11.5, color: "var(--fg-3)", marginBottom: 14 }}>44 screens · click to preview</div>
           {DIRECTORY.map(g => (
             <div key={g.group} style={{ marginBottom: 12 }}>
               <div className="eyebrow" style={{ marginBottom: 6 }}>{g.group}</div>
@@ -62,9 +73,13 @@ function ScreenLauncher({ route, go }) {
 }
 
 function App() {
-  const initial = (location.hash || "").replace("#", "") || "login";
+  const initial = (location.hash || "").replace("#", "") || (isMobileViewport() ? "m-login" : "login");
   const [route, setRoute] = React.useState(SCREENS[initial] ? initial : "login");
   const go = React.useCallback((r) => {
+    // Same device-width routing as the case study's other prototypes: a phone
+    // gets the dedicated patient mobile screens, desktop gets the full portal.
+    if (r === "dashboard" && isMobileViewport()) r = "m-home";
+    if (r === "login" && isMobileViewport()) r = "m-login";
     if (!SCREENS[r]) { console.warn("unknown route", r); return; }
     setRoute(r);
     history.replaceState(null, "", "#" + r);
@@ -83,9 +98,9 @@ function App() {
 
   const Screen = SCREENS[route] || LoginScreen;
   return (
-    <div style={{ height: "100vh", width: "100vw", overflow: "hidden" }}>
+    <div style={{ height: "100dvh", width: "100vw", overflow: "hidden" }}>
       <div key={route} style={{ height: "100%", width: "100%" }}><Screen go={go} /></div>
-      <ScreenLauncher route={route} go={go} />
+      {!MOBILE_ROUTES.has(route) && <ScreenLauncher route={route} go={go} />}
     </div>
   );
 }
