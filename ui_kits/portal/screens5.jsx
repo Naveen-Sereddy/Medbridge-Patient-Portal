@@ -78,8 +78,8 @@ function SettingsProfileScreen({ go }) {
         <h2 style={{ fontSize: 18, fontWeight: 700, margin: 0 }}>Profile Information</h2>
         <div className="divider" style={{ margin: "16px -24px 20px" }} />
         <div style={{ display: "flex", gap: 18, alignItems: "center", marginBottom: 24 }}>
-          <Avatar size="xl" initials="SJ" name="Sarah Johnson" />
-          <div style={{ flex: 1 }}><div style={{ fontSize: 16, fontWeight: 600 }}>Sarah Johnson</div>
+          <Avatar size="xl" initials="BM" name="Beth Mooney" />
+          <div style={{ flex: 1 }}><div style={{ fontSize: 16, fontWeight: 600 }}>Beth Mooney</div>
             <div style={{ fontSize: 13, color: "var(--fg-3)" }}>Patient since 2022 · MRN: MB-4827</div></div>
           <Button variant="outline-gray" icon="camera">Change Photo</Button>
           <Button variant="ghost">Remove</Button>
@@ -87,8 +87,8 @@ function SettingsProfileScreen({ go }) {
         <div className="divider" style={{ margin: "0 -24px 20px" }} />
         <h3 style={{ fontSize: 14, fontWeight: 600, margin: "0 0 16px" }}>Personal Information</h3>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-          <Field label="First Name"><Input value="Sarah" /></Field>
-          <Field label="Last Name"><Input value="Johnson" /></Field>
+          <Field label="First Name"><Input value="Beth" /></Field>
+          <Field label="Last Name"><Input value="Mooney" /></Field>
           <Field label="Date of Birth"><Input value="March 14, 1990" icon="calendar" /></Field>
           <Field label="Gender"><Input value="Female" /></Field>
           <div style={{ gridColumn: "1 / -1" }}><Field label="Address"><Input value={PATIENT.address} icon="map-pin" /></Field></div>
@@ -96,7 +96,7 @@ function SettingsProfileScreen({ go }) {
         <div className="divider" style={{ margin: "22px -24px 20px" }} />
         <h3 style={{ fontSize: 14, fontWeight: 600, margin: "0 0 16px" }}>Contact Information</h3>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-          <Field label="Email Address"><Input value="sarah.johnson@email.com" icon="mail" /></Field>
+          <Field label="Email Address"><Input value="beth.mooney@email.com" icon="mail" /></Field>
           <Field label="Phone Number"><Input value="(212) 555-0147" icon="phone" /></Field>
         </div>
         <div className="divider" style={{ margin: "22px -24px 20px" }} />
@@ -222,7 +222,7 @@ function HelpScreen({ go }) {
       <div style={{ maxWidth: 1040, margin: "0 auto" }}>
         <div style={{ borderRadius: 16, background: "var(--brand-600)", color: "#fff", padding: "36px 40px", marginBottom: 28, position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", width: 280, height: 280, borderRadius: "50%", background: "rgba(255,255,255,0.06)", top: -120, right: -40 }} />
-          <h2 style={{ fontSize: 26, fontWeight: 700, margin: 0, position: "relative" }}>How can we help, Sarah?</h2>
+          <h2 style={{ fontSize: 26, fontWeight: 700, margin: 0, position: "relative" }}>How can we help, Beth?</h2>
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.85)", margin: "8px 0 20px", position: "relative" }}>Search our help articles or reach your care team directly.</p>
           <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 10, background: "#fff", borderRadius: 10, padding: "0 16px", height: 50, maxWidth: 560 }}>
             <Icon name="search" size={20} style={{ color: "var(--n-400)" }} />

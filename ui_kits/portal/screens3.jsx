@@ -10,7 +10,7 @@ function PatientHeaderCard({ go }) {
   return (
     <Card pad style={{ marginBottom: 20 }}>
       <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
-        <Avatar size="lg" initials="SJ" name="Sarah Johnson" />
+        <Avatar size="lg" initials="BM" name="Beth Mooney" />
         <div style={{ flex: 1 }}>
           <h2 style={{ margin: 0, fontSize: 22, fontWeight: 700 }}>{PATIENT.name}</h2>
           <div style={{ fontSize: 13, color: "var(--fg-2)", marginTop: 3 }}>DOB: {PATIENT.dob} · Age {PATIENT.age} · {PATIENT.sex}</div>
@@ -61,7 +61,7 @@ function RecordsScreen({ go }) {
           <Card pad>
             <SectionHead title="Recent Visits" />
             <div>
-              {[["May 15","patel"],["Mar 22","chen"],["Jan 10","okafor"],["Nov 8","patel"],["Sep 3","tanaka"]].map(([d, prov], i) => {
+              {[["May 15","nair"],["Mar 22","kemp"],["Jan 10","miller"],["Nov 8","nair"],["Sep 3","jones"]].map(([d, prov], i) => {
                 const p = provById(prov);
                 return (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 14, padding: "12px 0", borderTop: i ? "1px solid var(--n-100)" : "none" }}>
@@ -178,7 +178,7 @@ function TestDetailScreen({ go }) {
           <Card style={{ overflow: "hidden" }}>
             <div style={{ padding: "20px 24px", borderBottom: "1px solid var(--n-100)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div><div style={{ fontSize: 16, fontWeight: 600 }}>Comprehensive Metabolic Panel</div>
-                <div style={{ fontSize: 13, color: "var(--fg-3)", marginTop: 2 }}>Collected May 15, 2026 · Dr. Lisa Chen</div></div>
+                <div style={{ fontSize: 13, color: "var(--fg-3)", marginTop: 2 }}>Collected May 15, 2026 · Dr. Freya Kemp</div></div>
               <Badge>Reviewed</Badge>
             </div>
             <table className="table">
@@ -197,7 +197,7 @@ function TestDetailScreen({ go }) {
               <h3 style={{ fontSize: 15, fontWeight: 600, margin: "0 0 12px" }}>Actions</h3>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 <Button variant="outline" block icon="download">Download PDF</Button>
-                <Button variant="ghost" block icon="message-square" onClick={() => go("thread")}>Message Dr. Chen</Button>
+                <Button variant="ghost" block icon="message-square" onClick={() => go("thread")}>Message Dr. Kemp</Button>
               </div>
             </Card>
           </div>
@@ -312,7 +312,7 @@ function PrescriptionsScreen({ go }) {
 
 function RxDetailScreen({ go }) {
   const m = PRESCRIPTIONS[1];
-  const dets = [["Prescribed By","Dr. Lisa Chen, MD"],["Date Prescribed","March 22, 2026"],["Dosage", m.dose],["Frequency", m.freq],["Condition", m.cond],["Quantity", m.qty + " (30-day supply)"],["Refills Left", m.left + " remaining"],["Expiry", m.expiry]];
+  const dets = [["Prescribed By","Dr. Freya Kemp, MD"],["Date Prescribed","March 22, 2026"],["Dosage", m.dose],["Frequency", m.freq],["Condition", m.cond],["Quantity", m.qty + " (30-day supply)"],["Refills Left", m.left + " remaining"],["Expiry", m.expiry]];
   return (
     <PageShell route="prescriptions" go={go} title={m.name + " " + m.dose} sub="Prescriptions → Metformin">
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>

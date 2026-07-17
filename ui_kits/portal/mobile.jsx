@@ -79,7 +79,7 @@ function MobileLoginScreen({ go }) {
           <h1 style={{ fontSize: 26, fontWeight: 700, margin: 0, letterSpacing: "-0.02em" }}>Welcome back</h1>
           <p style={{ fontSize: 14, color: "var(--fg-3)", margin: "6px 0 0" }}>Sign in to your health portal</p>
           <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 24 }}>
-            <Field label="Email address"><Input value="sarah.johnson@email.com" icon="mail" /></Field>
+            <Field label="Email address"><Input value="beth.mooney@email.com" icon="mail" /></Field>
             <Field label="Password"><Input value="••••••••••" type="password" icon="lock" /></Field>
             <Button block size="lg" onClick={() => go("dashboard")}>Sign In</Button>
             <Button variant="outline-gray" block size="lg" icon="globe" onClick={() => go("dashboard")}>Continue with Google</Button>
@@ -108,9 +108,9 @@ function MobileHomeScreen({ go }) {
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div>
               <div style={{ fontSize: 13, color: "var(--fg-3)" }}>Good morning</div>
-              <div style={{ fontSize: 22, fontWeight: 700, color: "var(--fg-1)", marginTop: 2 }}>Sarah</div>
+              <div style={{ fontSize: 22, fontWeight: 700, color: "var(--fg-1)", marginTop: 2 }}>Beth</div>
             </div>
-            <Avatar size="md" initials="SJ" name="Sarah Johnson" />
+            <Avatar size="md" initials="BM" name="Beth Mooney" />
           </div>
 
           <Card accentTop="var(--brand-600)" style={{ marginTop: 18 }}>
@@ -386,7 +386,7 @@ function MobileMessagesScreen({ go }) {
 function MobileThreadScreen({ go }) {
   const [msg, setMsg] = React.useState("");
   const [thread, setThread] = React.useState(THREAD);
-  const p = provById("chen");
+  const p = provById("kemp");
   const send = () => {
     if (!msg.trim()) return;
     setThread(t => [...t, { from: "pat", text: msg.trim(), time: "Just now" }]);

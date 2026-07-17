@@ -63,7 +63,7 @@ function InvoiceScreen({ go }) {
             <div style={{ padding: "24px 28px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 22 }}>
                 <div><div className="eyebrow" style={{ marginBottom: 6 }}>Billed To</div>
-                  <div style={{ fontSize: 15, fontWeight: 600 }}>Sarah Johnson</div>
+                  <div style={{ fontSize: 15, fontWeight: 600 }}>Beth Mooney</div>
                   <div style={{ fontSize: 13, color: "var(--fg-3)" }}>MRN: MB-4827 · DOB: Mar 14, 1990</div></div>
                 <div style={{ textAlign: "right" }}><div className="eyebrow" style={{ marginBottom: 6 }}>Date</div>
                   <div style={{ fontSize: 15, fontWeight: 600 }}>May 15, 2026</div>
@@ -123,7 +123,7 @@ function PaymentSuccessScreen({ go }) {
               <span style={{ width: 56, height: 56, borderRadius: 999, background: "var(--green-600)", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
                 <Icon name="check" size={30} style={{ color: "#fff" }} /></span></div>
             <h2 style={{ fontSize: 24, fontWeight: 700, margin: "20px 0 6px" }}>Payment successful</h2>
-            <p style={{ fontSize: 15, color: "var(--fg-3)", margin: 0 }}>A receipt was emailed to sarah.johnson@email.com</p>
+            <p style={{ fontSize: 15, color: "var(--fg-3)", margin: 0 }}>A receipt was emailed to beth.mooney@email.com</p>
           </div>
           <div className="divider" style={{ margin: "24px 0" }} />
           <div style={{ background: "var(--n-50)", borderRadius: 10, padding: 20 }}>
@@ -193,14 +193,14 @@ function MessagesInboxScreen({ go }) {
 }
 
 function MessageThreadScreen({ go }) {
-  const p = provById("patel");
+  const p = provById("nair");
   return (
     <PageShell route="messages" go={go} title="Messages" sub="2 unread" scroll={false}>
       <div style={{ display: "flex", height: "100%" }}>
         <ConversationList activeId="c1" go={go} />
         <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#fff", minWidth: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14, padding: "14px 24px", borderBottom: "1px solid var(--border)", flex: "none" }}>
-            <ProviderAvatar prov="patel" size="md" />
+            <ProviderAvatar prov="nair" size="md" />
             <div style={{ flex: 1, minWidth: 0 }}><div style={{ fontSize: 15, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.full}</div>
               <div style={{ fontSize: 12, color: "var(--fg-3)" }}>{p.spec} · {p.clinic}</div></div>
             <button className="btn-icon" onClick={() => go("provider-profile")}><Icon name="user" size={18} /></button>

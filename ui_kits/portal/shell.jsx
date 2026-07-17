@@ -45,9 +45,9 @@ function Sidebar({ route, go }) {
       <div style={{ height: 1, background: "var(--sidebar-div)", margin: "10px 0 0" }} />
       <button onClick={() => go("settings")} style={{ display: "flex", alignItems: "center", gap: 12, padding: "16px 20px",
         background: "none", border: "none", cursor: "pointer", textAlign: "left", width: "100%" }}>
-        <Avatar size="sm" initials="SJ" name="Sarah Johnson" />
+        <Avatar size="sm" initials="BM" name="Beth Mooney" />
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>Sarah Johnson</div>
+          <div style={{ fontSize: 13, fontWeight: 600, color: "#fff" }}>Beth Mooney</div>
           <div style={{ fontSize: 11, color: "var(--sidebar-text)" }}>Patient · #MB-4827</div>
         </div>
         <Icon name="chevron-right" size={16} style={{ color: "#5C6B82" }} />
@@ -74,7 +74,7 @@ function TopNav({ title, sub, go, onSearch }) {
         <span style={{ position: "absolute", top: 7, right: 7, width: 8, height: 8, borderRadius: 999, background: "var(--brand-600)", border: "2px solid #fff" }} />
       </button>
       <button onClick={() => go("settings")} style={{ border: "none", background: "none", cursor: "pointer", padding: 0 }} aria-label="Account">
-        <Avatar size="sm" initials="SJ" name="Sarah Johnson" />
+        <Avatar size="sm" initials="BM" name="Beth Mooney" />
       </button>
     </header>
   );

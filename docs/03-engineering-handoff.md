@@ -74,5 +74,5 @@ These were designed in, not bolted on — make sure they survive the build:
 
 ## Prototype reference
 
-`MedBridge Patient Portal.html` — open in any modern browser, no build step. All 30 screens
+`ui_kits/portal/index.html` — open in any modern browser, no build step. All 30 screens
 are clickable. The prototype is the source of truth for interaction patterns and states.

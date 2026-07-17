@@ -32,21 +32,21 @@ Evidence themes (typical in patient-portal research, used to frame this project)
 
 ## Target users
 1. **Chronic-condition patients** managing recurring visits, multiple medications, and ongoing costs
-   (primary — Sarah).
+   (primary — Beth).
 2. **Busy caregivers/parents** managing care for themselves and dependents.
 3. **Occasional patients** needing a one-off visit who value speed and clarity.
 4. **Older / low-vision patients** who need large targets, high contrast, and plain language.
 
 ## User personas
 
-### Persona 1 — Sarah Johnson (primary)
+### Persona 1 — Beth Mooney (primary)
 - **36, marketing manager, NYC.** MRN MB-4827. Type 2 diabetes + Stage 1 hypertension.
 - **Goals:** stay on top of meds and appointments without phone calls; understand results and bills.
 - **Frustrations:** opaque availability, surprise balances, refill phone tag.
 - **Tech:** high comfort, mostly desktop at work + phone after hours.
 - **Quote:** "Just tell me what I need to do next and how much it costs."
 
-### Persona 2 — Robert Maddox (secondary)
+### Persona 2 — Mitchell Owen (secondary)
 - **68, retired teacher.** Post-cardiac monitoring. Lower vision, moderate tech comfort.
 - **Goals:** read results in plain language; large, legible UI; easy reschedule.
 - **Needs:** 4.5:1 contrast, 44px targets, visible focus, no jargon.
@@ -57,7 +57,7 @@ Evidence themes (typical in patient-portal research, used to frame this project)
 
 ## User journey maps
 
-### Journey A — Book an appointment (Sarah)
+### Journey A — Book an appointment (Beth)
 | Stage | Action | Touchpoint | Emotion | Design response |
 |---|---|---|---|---|
 | Trigger | Needs cardiology follow-up | Dashboard "Book" | Motivated | Primary CTA on dashboard + nav |

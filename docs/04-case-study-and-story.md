@@ -37,7 +37,7 @@ Grounded in established patient-portal findings and a heuristic audit of the bas
 | Teladoc | Telehealth entry | Unified telehealth + in-person in one appointment model |
 
 ### User personas
-Primary **Sarah Johnson** (36, chronic conditions, high tech comfort); secondary **Robert** (68, low
+Primary **Beth Mooney** (36, chronic conditions, high tech comfort); secondary **Mitchell** (68, low
 vision); tertiary **Dana** (caregiver). Full personas in `01-design-and-product.md`.
 
 ### User flows

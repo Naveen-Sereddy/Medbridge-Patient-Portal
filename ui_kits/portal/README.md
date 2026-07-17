@@ -41,7 +41,7 @@ design, copy the relevant `.jsx` + the two root CSS files, or lift the class nam
 
 ## Fidelity notes
 - **Source of truth:** the original `MedBridge-Figma-Plugin/code.js`. Workflows, IA, copy, persona
-  (Sarah Johnson, MRN MB-4827) and the realistic content are preserved; visuals are elevated.
+  (Beth Mooney, MRN MB-4827) and the realistic content are preserved; visuals are elevated.
 - **Icons:** Lucide (CDN) replaces the source's emoji/rectangle placeholders.
 - **Font:** Hanken Grotesk (Google Fonts) — elevated substitute for Inter.
 - These are cosmetic recreations for prototyping — not production-wired (no real auth/network).

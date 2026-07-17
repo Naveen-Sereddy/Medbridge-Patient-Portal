@@ -43,7 +43,7 @@ function LoginScreen({ go }) {
       <p style={{ fontSize: 15, color: "var(--fg-3)", margin: "8px 0 0" }}>Sign in to your health portal</p>
       <div className="divider" style={{ margin: "24px 0" }} />
       <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-        <Field label="Email address"><Input value="sarah.johnson@email.com" icon="mail" /></Field>
+        <Field label="Email address"><Input value="beth.mooney@email.com" icon="mail" /></Field>
         <Field label="Password"><Input value="••••••••••" type="password" icon="lock" /></Field>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 9, fontSize: 13, color: "var(--n-700)", cursor: "pointer" }}>
@@ -73,7 +73,7 @@ function ForgotScreen({ go }) {
       <h2 style={{ fontSize: 26, fontWeight: 700, margin: 0, letterSpacing: "-0.01em" }}>Reset your password</h2>
       <p style={{ fontSize: 14, color: "var(--fg-3)", margin: "8px 0 24px", lineHeight: 1.5 }}>Enter your email and we'll send a reset link within 2 minutes.</p>
       <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-        <Field label="Registered email address"><Input value="sarah.johnson@email.com" icon="mail" /></Field>
+        <Field label="Registered email address"><Input value="beth.mooney@email.com" icon="mail" /></Field>
         <Button block size="lg" icon="send" onClick={() => go("reset")}>Send Reset Link</Button>
       </div>
       <div style={{ marginTop: 22 }}>
@@ -115,12 +115,12 @@ function DashboardScreen({ go }) {
     { label: "Upcoming Appointments", value: "3", sub: "Next: Jun 3", subIcon: "calendar", subColor: "var(--brand-600)", accent: "var(--brand-600)" },
     { label: "Active Prescriptions", value: "5", sub: "2 refills due", subIcon: "triangle-alert", subColor: "var(--amber-700)", accent: "var(--teal-600)" },
     { label: "Pending Balance", value: "$248", sub: "Due Jun 15", subIcon: "clock", subColor: "var(--amber-700)", accent: "var(--amber-700)" },
-    { label: "Unread Messages", value: "2", sub: "From Dr. Patel", subIcon: "message-square", subColor: "var(--green-600)", accent: "var(--green-600)" },
+    { label: "Unread Messages", value: "2", sub: "From Dr. Nair", subIcon: "message-square", subColor: "var(--green-600)", accent: "var(--green-600)" },
   ];
   return (
     <PageShell route="dashboard" go={go} title="Dashboard" sub="Thursday, May 28, 2026">
       <div style={{ maxWidth: 1180, margin: "0 auto" }}>
-        <h2 style={{ fontSize: 22, fontWeight: 700, margin: "0 0 4px", letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>Good morning, Sarah <span style={{ fontWeight: 400 }}>👋</span></h2>
+        <h2 style={{ fontSize: 22, fontWeight: 700, margin: "0 0 4px", letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>Good morning, Beth <span style={{ fontWeight: 400 }}>👋</span></h2>
         <p style={{ fontSize: 13, color: "var(--fg-3)", margin: "0 0 24px" }}>Your next appointment is in 3 days · Last login: today 8:42 AM</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20, marginBottom: 28 }}>
           {stats.map((s, i) => <Stat key={i} {...s} />)}
@@ -181,12 +181,12 @@ function DashAlertsScreen({ go }) {
     { label: "Upcoming Appointments", value: "3", sub: "Next: Jun 3", subColor: "var(--brand-600)", accent: "var(--brand-600)" },
     { label: "Active Prescriptions", value: "5", sub: "2 refills due", subIcon: "triangle-alert", subColor: "var(--amber-700)", accent: "var(--amber-700)" },
     { label: "Pending Balance", value: "$248", sub: "Due Jun 15", subIcon: "triangle-alert", subColor: "var(--red-700)", accent: "var(--red-700)" },
-    { label: "Unread Messages", value: "2", sub: "From Dr. Patel", subColor: "var(--teal-600)", accent: "var(--teal-600)" },
+    { label: "Unread Messages", value: "2", sub: "From Dr. Nair", subColor: "var(--teal-600)", accent: "var(--teal-600)" },
   ];
   const tasks = [
     { icon: "pill", color: "var(--amber-700)", title: "Request Metformin Refill", body: "18 days remaining — order now to avoid running out.", action: "Request Refill", urg: "Soon", go: "rx-detail" },
     { icon: "credit-card", color: "var(--red-700)", title: "Pay Invoice #INV-1042", body: "$69.00 due June 15, 2026 — Cardiology visit co-pay.", action: "Pay $69.00", urg: "Urgent", go: "invoice" },
-    { icon: "clipboard-list", color: "var(--brand-600)", title: "Complete Health Questionnaire", body: "Dr. Chen requested a pre-visit health update for Jun 12.", action: "Complete Now", urg: "New", go: "appt-details" },
+    { icon: "clipboard-list", color: "var(--brand-600)", title: "Complete Health Questionnaire", body: "Dr. Kemp requested a pre-visit health update for Jun 12.", action: "Complete Now", urg: "New", go: "appt-details" },
   ];
   const quick = [
     { label: "Book Appointment", icon: "calendar-plus", go: "book" },

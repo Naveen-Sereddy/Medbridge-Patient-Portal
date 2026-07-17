@@ -49,7 +49,7 @@ function ApptListScreen({ go }) {
 
 function CalendarScreen({ go }) {
   const dates = [[null,1,2,3,4,5,6],[7,8,9,10,11,12,13],[14,15,16,17,18,19,20],[21,22,23,24,25,26,27],[28,29,30,null,null,null,null]];
-  const hasAppt = { 3:"patel", 12:"chen", 17:"okafor", 25:"sharma" };
+  const hasAppt = { 3:"nair", 12:"kemp", 17:"miller", 25:"sharma" };
   const [sel, setSel] = React.useState(3);
   const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
   const selAppt = APPOINTMENTS.find(a => parseInt(a.date.match(/\d+/)[0]) === sel);
@@ -153,9 +153,9 @@ function ProvidersScreen({ go }) {
 }
 
 function ProviderProfileScreen({ go }) {
-  const p = provById("patel");
+  const p = provById("nair");
   return (
-    <PageShell route="providers" go={go} title="Provider Profile" sub="Find a Doctor → Dr. Patel">
+    <PageShell route="providers" go={go} title="Provider Profile" sub="Find a Doctor → Dr. Nair">
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <Breadcrumb go={go} items={[{ label: "Find a Doctor", to: "providers" }, { label: p.full }]} />
         <div style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr", gap: 24, alignItems: "start" }}>
@@ -212,7 +212,7 @@ function ProviderProfileScreen({ go }) {
 
 // ---- BOOKING flow ----
 function BookStep1({ go }) {
-  const [sel, setSel] = React.useState("patel");
+  const [sel, setSel] = React.useState("nair");
   return (
     <PageShell route="appointments" go={go} title="Book Appointment" sub="Appointments → Book New">
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -289,7 +289,7 @@ function BookStep2({ go }) {
           </Card>
           <Card pad>
             <div style={{ fontSize: 16, fontWeight: 600 }}>Available Times — Tue, Jun {day}</div>
-            <div style={{ fontSize: 13, color: "var(--fg-3)", marginTop: 3 }}>Dr. Arun Patel · Cardiology</div>
+            <div style={{ fontSize: 13, color: "var(--fg-3)", marginTop: 3 }}>Dr. Rahul Nair · Cardiology</div>
             <div className="divider" style={{ margin: "16px 0" }} />
             <div className="eyebrow" style={{ marginBottom: 10 }}>Morning</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 8, marginBottom: 20 }}>
@@ -315,7 +315,7 @@ function BookStep2({ go }) {
 }
 
 function BookStep3({ go }) {
-  const p = provById("patel");
+  const p = provById("nair");
   const rows = [["Doctor", p.full],["Specialty", p.spec],["Date","Tuesday, June 3, 2026"],["Time","10:30 AM (45 minutes)"],["Location","Heart Care Center, 420 Park Ave"],["Visit Type","In-Person"]];
   return (
     <PageShell route="appointments" go={go} title="Book Appointment" sub="Appointments → Book New">
@@ -345,7 +345,7 @@ function BookStep3({ go }) {
 }
 
 function ApptConfirmedScreen({ go }) {
-  const p = provById("patel");
+  const p = provById("nair");
   const dets = [["Doctor", p.full],["Specialty","Cardiology"],["Date","Tuesday, June 3, 2026"],["Time","10:30 AM (45 minutes)"],["Location","Heart Care Center, 420 Park Ave"],["Visit Type","In-Person"]];
   return (
     <PageShell route="appointments" go={go} title="Booking Confirmed">
@@ -357,7 +357,7 @@ function ApptConfirmedScreen({ go }) {
                 <Icon name="check" size={30} style={{ color: "#fff" }} /></span>
             </div>
             <h2 style={{ fontSize: 26, fontWeight: 700, margin: "20px 0 6px" }}>Appointment Confirmed!</h2>
-            <p style={{ fontSize: 15, color: "var(--fg-3)", margin: 0 }}>A confirmation was sent to sarah.johnson@email.com</p>
+            <p style={{ fontSize: 15, color: "var(--fg-3)", margin: 0 }}>A confirmation was sent to beth.mooney@email.com</p>
           </div>
           <div className="divider" style={{ margin: "24px 0" }} />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "18px 24px" }}>
@@ -379,9 +379,9 @@ function ApptDetailsScreen({ go }) {
   const a = APPOINTMENTS[0], p = provById(a.prov);
   const dets = [["Date & Time", a.day + " · " + a.time],["Duration","45 minutes"],["Visit Type", a.type],["Location", a.loc],["Reason", a.reason],["Insurance","BlueCross BlueShield — Accepted"],["Co-pay", a.copay]];
   return (
-    <PageShell route="appointments" go={go} title="Appointment Details" sub="Appointments → Dr. Patel → Jun 3">
+    <PageShell route="appointments" go={go} title="Appointment Details" sub="Appointments → Dr. Nair → Jun 3">
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <Breadcrumb go={go} items={[{ label: "Appointments", to: "appointments" }, { label: "Dr. Patel — Jun 3" }]} />
+        <Breadcrumb go={go} items={[{ label: "Appointments", to: "appointments" }, { label: "Dr. Nair — Jun 3" }]} />
         <div style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr", gap: 24, alignItems: "start" }}>
           <Card pad>
             <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
@@ -438,14 +438,14 @@ function ApptDetailsScreen({ go }) {
 // ---- Cancel confirmation (modal-style) ----
 function ApptCancelScreen({ go }) {
   return (
-    <PageShell route="appointments" go={go} title="Cancel Appointment" sub="Appointments → Dr. Patel → Cancel">
+    <PageShell route="appointments" go={go} title="Cancel Appointment" sub="Appointments → Dr. Nair → Cancel">
       <div style={{ maxWidth: 560, margin: "20px auto 0" }}>
         <Card pad>
           <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
             <span style={{ width: 48, height: 48, borderRadius: 12, background: "var(--red-bg)", display: "inline-flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
               <Icon name="triangle-alert" size={24} style={{ color: "var(--red-700)" }} /></span>
             <div><h2 style={{ margin: 0, fontSize: 19, fontWeight: 700 }}>Cancel this appointment?</h2>
-              <p style={{ fontSize: 14, color: "var(--fg-2)", lineHeight: 1.5, margin: "6px 0 0" }}>You're about to cancel your <strong>Cardiology</strong> visit with Dr. Arun Patel on <strong>Tuesday, June 3 at 10:30 AM</strong>. This can't be undone, but you can rebook anytime.</p></div>
+              <p style={{ fontSize: 14, color: "var(--fg-2)", lineHeight: 1.5, margin: "6px 0 0" }}>You're about to cancel your <strong>Cardiology</strong> visit with Dr. Rahul Nair on <strong>Tuesday, June 3 at 10:30 AM</strong>. This can't be undone, but you can rebook anytime.</p></div>
           </div>
           <div style={{ margin: "20px 0" }}>
             <Field label="Reason for cancellation"><Input placeholder="Let your provider know why (optional)" /></Field>
