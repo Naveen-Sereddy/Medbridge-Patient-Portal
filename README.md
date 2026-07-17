@@ -1,5 +1,7 @@
 # MedBridge — Patient Portal Redesign
 
+**Live case study:** [naveensereddy.com/case-medbridge](https://naveensereddy.com/case-medbridge)
+
 MedBridge is a healthcare patient portal redesign — a place where patients manage appointments, prescriptions, medical records, billing, and secure messaging in one interface. The focus was on making something that actually feels calm and trustworthy rather than clinical and overwhelming, which is where most patient portals fall short.
 
 I used MyChart, Zocdoc, One Medical, and Teladoc as competitive references during research. The goal wasn't to copy any of them but to understand what the best products in this space get right, then apply that to a coherent design system built from scratch.
@@ -38,7 +40,7 @@ I used MyChart, Zocdoc, One Medical, and Teladoc as competitive references durin
 
 ---
 
-## Design decisions worth noting
+## Why I built it this way
 
 The sidebar is a deep navy (`#0F1B2D`) against a near-white page background (`#F8FAFC`). That contrast is intentional — it anchors the layout and keeps the content area feeling open rather than cramped.
 
@@ -47,6 +49,12 @@ Typography is Hanken Grotesk. It reads friendlier than Inter at smaller sizes wh
 All clinical values — blood pressure, vitals, lab results — use tabular figures so numbers stay optically aligned in lists and tables. Small thing, but it matters in a health context.
 
 Accessibility was treated as a constraint, not an afterthought. All text passes WCAG 2.1 AA contrast ratios, interactive elements have 44px minimum touch targets, and focus states are visible by default — not hidden or styled away.
+
+---
+
+## Role I played
+
+Product designer end to end: competitive research across MyChart, Zocdoc, One Medical, and Teladoc, personas and journey mapping, information architecture, the design system, all 30 desktop screens, and an accessibility pass against WCAG 2.1 AA.
 
 ---
 
