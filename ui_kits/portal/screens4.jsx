@@ -83,7 +83,7 @@ function InvoiceScreen({ go }) {
               </div>
             </div>
             <div style={{ background: "var(--n-50)", padding: "14px 28px", fontSize: 12, color: "var(--n-400)", display: "flex", alignItems: "center", gap: 6 }}>
-              <Icon name="shield-check" size={14} /> HIPAA Compliant Billing · billing@medbridge.health · 1-800-MED-BRDG</div>
+              <Icon name="shield-check" size={14} /> Secure Billing · billing@medbridge.health · 1-800-MED-BRDG</div>
           </Card>
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
             <Card pad>

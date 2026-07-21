@@ -207,7 +207,7 @@ function HelpScreen({ go }) {
     { icon: "pill", title: "Prescriptions", body: "Refills, pharmacies, and dosage questions", color: "var(--teal-600)" },
     { icon: "credit-card", title: "Billing & Insurance", body: "Invoices, payments, and coverage", color: "var(--amber-700)" },
     { icon: "folder-heart", title: "Medical Records", body: "Test results, history, and documents", color: "var(--purple-700)" },
-    { icon: "shield-check", title: "Privacy & Security", body: "Account safety and HIPAA", color: "var(--green-600)" },
+    { icon: "shield-check", title: "Privacy & Security", body: "Account safety and data privacy", color: "var(--green-600)" },
     { icon: "user", title: "Account & Profile", body: "Settings, contact info, and access", color: "var(--brand-700)" },
   ];
   const faqs = [

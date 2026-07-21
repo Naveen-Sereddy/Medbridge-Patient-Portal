@@ -86,7 +86,7 @@ function MobileLoginScreen({ go }) {
           </div>
           <div style={{ flex: 1 }} />
           <p style={{ textAlign: "center", fontSize: 11, color: "var(--n-400)", marginTop: 24, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
-            <Icon name="shield-check" size={13} /> HIPAA compliant · WCAG 2.1 AA
+            <Icon name="shield-check" size={13} /> Privacy-first · WCAG 2.1 AA
           </p>
         </div>
       </div>

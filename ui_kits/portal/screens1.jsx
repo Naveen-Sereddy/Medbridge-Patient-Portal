@@ -38,7 +38,7 @@ function LoginScreen({ go }) {
     <AuthLayout
       heroTitle={"Your health,\nsimplified."}
       heroBody={"Manage appointments, records, prescriptions, and billing — all in one secure place."}
-      pills={[{ icon: "shield-check", label: "HIPAA Compliant" }, { icon: "star", label: "4.9 Rating" }, { icon: "users", label: "200K+ Patients" }]}>
+      pills={[{ icon: "shield-check", label: "Secure & Private" }, { icon: "heart", label: "Patient-First Design" }, { icon: "clock", label: "24/7 Access" }]}>
       <h2 style={{ fontSize: 29, fontWeight: 700, margin: 0, letterSpacing: "-0.02em" }}>Welcome back</h2>
       <p style={{ fontSize: 15, color: "var(--fg-3)", margin: "8px 0 0" }}>Sign in to your health portal</p>
       <div className="divider" style={{ margin: "24px 0" }} />
