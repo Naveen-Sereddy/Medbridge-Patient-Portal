@@ -10,6 +10,11 @@
    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
    See README "Visual Foundations" for the substitution note. */
 
+/* Resolve the two type families' @font-face rules into this CSS closure so the
+   design-system compiler can see them. Same families the HTML <link>s load —
+   no substitution, just makes the font source explicit here. */
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap");
+
 :root {
   /* ---- BRAND (MedBridge Blue) ------------------------------------------- */
   --brand-50:  #EFF6FF;   /* tints, selected-row bg, info surfaces */
@@ -61,6 +66,10 @@
   --accent:         var(--brand-600);
   --accent-hover:   var(--brand-700);
   --focus-ring:     #2E80E6;        /* 3px outline for keyboard focus */
+
+  /* ---- LOGO (surface-aware) ------------------------------------------- */
+  --logo-on-light:  var(--brand-600);  /* white/cream cards, light page bg */
+  --logo-on-dark:   var(--white);      /* sidebar, colored brand panels, dark headers */
 
   /* ---- TYPOGRAPHY -------------------------------------------------------- */
   --font-sans: "Hanken Grotesk", "Inter", -apple-system, BlinkMacSystemFont,
@@ -126,11 +135,11 @@
   --content-pad: 32px;
 
   /* ---- MOTION ------------------------------------------------------------ */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-fast: 120ms;
-  --dur-base: 180ms;
-  --dur-slow: 280ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);   /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 120ms;   /* @kind other */
+  --dur-base: 180ms;   /* @kind other */
+  --dur-slow: 280ms;   /* @kind other */
 }
 
 /* ============================================================================
