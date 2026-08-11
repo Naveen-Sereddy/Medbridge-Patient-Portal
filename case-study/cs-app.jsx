@@ -9,15 +9,17 @@ const PROTO_URL = "../ui_kits/portal/index.html";
 const b = (w, h, c, r = 3) => <div style={{ width: w, height: h, borderRadius: r, background: c, flex: "none" }} />;
 const PB = "var(--brand-600)", PT = "var(--teal-600)", PG = "var(--green-600)", PA = "var(--amber-700)";
 
-// mini browser chrome wrapper
+// mini phone device frame — these mockups are mobile-width screens, so they
+// get a real phone bezel (notch, correct ~9:19.5 aspect) instead of a flat
+// desktop-browser chrome stretched tall and thin.
 function MiniFrame({ children }) {
   return (
-    <div style={{ flex: 1, minHeight: 0, borderRadius: 10, overflow: "hidden", border: "1px solid var(--border)", background: "#fff",
-      boxShadow: "var(--shadow-sm)", display: "flex", flexDirection: "column" }}>
-      <div style={{ height: 18, background: "#fff", borderBottom: "1px solid var(--n-100)", display: "flex", alignItems: "center", gap: 4, padding: "0 8px", flex: "none" }}>
-        {b(5, 5, "#FF5F57", 999)}{b(5, 5, "#FEBC2E", 999)}{b(5, 5, "#28C840", 999)}
-      </div>
-      <div style={{ flex: 1, minHeight: 0, background: "var(--n-50)", display: "flex", flexDirection: "column" }}>{children}</div>
+    <div style={{ width: "100%", maxWidth: 208, aspectRatio: "9 / 19.5", margin: "0 auto", position: "relative",
+      borderRadius: 32, border: "8px solid #1E293B", background: "#1E293B", boxShadow: "var(--shadow-lg)", overflow: "hidden" }}>
+      <div style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)", width: 58, height: 16,
+        background: "#1E293B", borderRadius: "0 0 9px 9px", zIndex: 3 }} />
+      <div style={{ position: "absolute", inset: 0, borderRadius: 24, overflow: "hidden", background: "var(--n-50)",
+        display: "flex", flexDirection: "column", paddingTop: 16 }}>{children}</div>
     </div>
   );
 }
@@ -147,10 +149,10 @@ function PrototypeArtifact() {
       desc="The primary path, fully clickable across 30 real screens: sign in → dashboard → book → pick date & time → confirm → success. Real screen-to-screen navigation, not a slideshow.">
       <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", gap: 22 }}>
         {/* flow row */}
-        <div style={{ flex: 1, minHeight: 0, display: "flex", alignItems: "stretch", gap: 6 }}>
+        <div style={{ flex: 1, minHeight: 0, display: "flex", alignItems: "flex-start", justifyContent: "center", gap: 6 }}>
           {FLOW.map(([n, label, Screen], i) => (
             <React.Fragment key={n}>
-              <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column" }}>
+              <div style={{ flex: "0 1 200px", minWidth: 0, display: "flex", flexDirection: "column" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 9 }}>
                   <span style={{ width: 19, height: 19, borderRadius: 999, background: ACCENT, color: "#fff", fontSize: 10.5, fontWeight: 800, display: "inline-flex", alignItems: "center", justifyContent: "center", flex: "none" }}>{n}</span>
                   <span style={{ fontSize: 12.5, fontWeight: 700, color: "var(--fg-1)" }}>{label}</span>
@@ -158,7 +160,7 @@ function PrototypeArtifact() {
                 <MiniFrame><Screen /></MiniFrame>
               </div>
               {i < FLOW.length - 1 && (
-                <div style={{ display: "flex", alignItems: "center", paddingTop: 28, flex: "none" }}>
+                <div style={{ display: "flex", alignItems: "center", paddingTop: 130, flex: "none" }}>
                   <Icon name="chevron-right" size={20} style={{ color: "var(--n-300)" }} />
                 </div>
               )}

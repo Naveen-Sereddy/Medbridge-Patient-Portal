@@ -5,44 +5,43 @@
 const FRAME_W = 1760;
 const FRAME_H = 1100;
 const ACCENT = "var(--brand-600)";   // accent used by artifact content (real product brand)
-const CHROME_ACCENT = "var(--cs-accent)"; // accent used by the frame chrome (site identity)
+const CHROME_ACCENT = "var(--brand-600)"; // accent used by the frame chrome (same as product — no separate deck identity)
 
 // ---------------------------------------------------------------- ArtifactFrame
-// Frame chrome (background, header band, typography) matches the portfolio
-// site's own identity (charcoal/off-white/gold, Fraunces/Inter). Artifact
-// content below the divider keeps MedBridge's real product tokens — those
-// panels render the actual research/wireframe/UI deliverable and shouldn't
-// be recolored to the portfolio's palette.
+// Frame chrome (background, header band, typography) uses MedBridge's own
+// product tokens end to end — same light surface, Hanken Grotesk, and brand
+// blue as the real portal, so the case study deck and the product it
+// documents read as one identity instead of two.
 function ArtifactFrame({ n, kicker, title, desc, children, padded = true }) {
   return (
-    <div style={{ width: "100%", height: "100%", background: "var(--cs-bg)", display: "flex",
-      flexDirection: "column", fontFamily: "var(--cs-f-sans)", color: "var(--cs-ink)", overflow: "hidden" }}>
+    <div style={{ width: "100%", height: "100%", background: "var(--bg-page)", display: "flex",
+      flexDirection: "column", fontFamily: "var(--font-sans)", color: "var(--fg-1)", overflow: "hidden" }}>
       {/* Header band */}
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between",
         padding: "44px 56px 22px", flex: "none" }}>
         <div style={{ display: "flex", gap: 22 }}>
-          <div style={{ width: 56, height: 56, borderRadius: 14, background: "transparent", color: CHROME_ACCENT,
-            border: "1px solid var(--cs-line)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none",
-            fontFamily: "var(--cs-f-serif)", fontStyle: "italic", fontSize: 22, fontWeight: 500, letterSpacing: "-0.02em" }}>{n}</div>
+          <div style={{ width: 56, height: 56, borderRadius: 14, background: "var(--brand-50)", color: CHROME_ACCENT,
+            border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none",
+            fontSize: 20, fontWeight: 700, letterSpacing: "-0.02em" }}>{n}</div>
           <div>
             <div style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase",
-              letterSpacing: "0.14em", color: "var(--cs-ink-3)" }}>{kicker}</div>
-            <h1 style={{ margin: "5px 0 0", fontFamily: "var(--cs-f-serif)", fontStyle: "italic", fontSize: 33, fontWeight: 500, letterSpacing: "-0.01em",
-              lineHeight: 1.05, color: "var(--cs-ink)" }}>{title}</h1>
-            {desc && <p style={{ margin: "9px 0 0", fontSize: 15.5, color: "var(--cs-ink-3)", lineHeight: 1.45,
+              letterSpacing: "0.14em", color: "var(--fg-3)" }}>{kicker}</div>
+            <h1 style={{ margin: "5px 0 0", fontSize: 32, fontWeight: 700, letterSpacing: "-0.015em",
+              lineHeight: 1.05, color: "var(--fg-1)" }}>{title}</h1>
+            {desc && <p style={{ margin: "9px 0 0", fontSize: 15.5, color: "var(--fg-3)", lineHeight: 1.45,
               maxWidth: 920 }}>{desc}</p>}
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 11, flex: "none", paddingTop: 6 }}>
-          <span style={{ width: 7, height: 7, borderRadius: "50%", background: CHROME_ACCENT, display: "inline-block" }} />
+          <BrandMark size={20} />
           <div style={{ lineHeight: 1.2 }}>
-            <div style={{ fontSize: 15, fontWeight: 600, letterSpacing: "0.01em", color: "var(--cs-ink)" }}>MedBridge</div>
-            <div style={{ fontSize: 11, color: "var(--cs-ink-3)", fontWeight: 500 }}>Patient Portal · UX Case Study</div>
+            <div style={{ fontSize: 15, fontWeight: 700, letterSpacing: "0.01em", color: "var(--fg-1)" }}>MedBridge</div>
+            <div style={{ fontSize: 11, color: "var(--fg-3)", fontWeight: 500 }}>Patient Portal · UX Case Study</div>
           </div>
         </div>
       </div>
-      <div style={{ height: 1, background: "var(--cs-line)", margin: "0 56px", flex: "none" }} />
-      {/* Body — real product tokens from here down */}
+      <div style={{ height: 1, background: "var(--border)", margin: "0 56px", flex: "none" }} />
+      {/* Body */}
       <div style={{ flex: 1, minHeight: 0, padding: padded ? "30px 56px 46px" : 0, display: "flex", flexDirection: "column",
         fontFamily: "var(--font-sans)", color: "var(--fg-1)" }}>
         {children}
