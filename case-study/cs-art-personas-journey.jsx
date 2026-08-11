@@ -395,13 +395,20 @@ function EmotionCurve() {
         ))}
         <polyline points={pts} fill="none" stroke="var(--brand-400)" strokeWidth="3"
           strokeLinecap="round" strokeLinejoin="round" />
-        {xs.map((x, i) => (
-          <circle key={i} cx={x} cy={ys[i]} r="7" fill="#fff" stroke={J_EMOTION[i].color} strokeWidth="3.5" />
-        ))}
       </svg>
+      {/* Dots rendered as plain circular divs, positioned by percentage — the SVG
+          above uses preserveAspectRatio="none" to fill a wide, short box, which
+          non-uniformly scales anything drawn inside it (SVG <circle> elements
+          come out stretched into ellipses). CSS percentage positioning has no
+          such distortion, so the dots stay perfectly round. */}
       {J_EMOTION.map((e, i) => (
         <div key={i} style={{ position: "absolute", left: `${(xs[i] / W) * 100}%`, top: `${(ys[i] / H) * 100}%`,
-          transform: "translate(-50%, -150%)", fontSize: 12, fontWeight: 700, color: e.color, whiteSpace: "nowrap" }}>
+          transform: "translate(-50%, -50%)", width: 14, height: 14, borderRadius: "50%", boxSizing: "border-box",
+          background: "#fff", border: `3.5px solid ${e.color}` }} />
+      ))}
+      {J_EMOTION.map((e, i) => (
+        <div key={`label-${i}`} style={{ position: "absolute", left: `${(xs[i] / W) * 100}%`, top: `${(ys[i] / H) * 100}%`,
+          transform: "translate(-50%, -180%)", fontSize: 12, fontWeight: 700, color: e.color, whiteSpace: "nowrap" }}>
           {e.mood}
         </div>
       ))}
