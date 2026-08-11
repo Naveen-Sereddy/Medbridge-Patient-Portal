@@ -82,11 +82,20 @@ function MobileLoginScreen({ go }) {
             <Field label="Email address"><Input value="beth.mooney@email.com" icon="mail" /></Field>
             <Field label="Password"><Input value="••••••••••" type="password" icon="lock" /></Field>
             <Button block size="lg" onClick={() => go("dashboard")}>Sign In</Button>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, margin: "2px 0" }}>
+              <div className="divider" style={{ flex: 1 }} /><span style={{ fontSize: 12, color: "var(--n-400)" }}>or</span><div className="divider" style={{ flex: 1 }} />
+            </div>
             <Button variant="outline-gray" block size="lg" icon="globe" onClick={() => go("dashboard")}>Continue with Google</Button>
           </div>
+          <p style={{ textAlign: "center", fontSize: 13, color: "var(--fg-3)", marginTop: 22 }}>
+            New patient? <button onClick={() => go("dashboard")} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--brand-600)", fontWeight: 600, fontSize: 13, fontFamily: "inherit" }}>Create your account →</button>
+          </p>
           <div style={{ flex: 1 }} />
-          <p style={{ textAlign: "center", fontSize: 11, color: "var(--n-400)", marginTop: 24, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
-            <Icon name="shield-check" size={13} /> Privacy-first · WCAG 2.1 AA
+          <p style={{ textAlign: "center", fontSize: 11.5, color: "var(--n-400)", lineHeight: 1.6 }}>
+            Manage appointments, records, prescriptions, and billing — all in one secure, patient-first place, available 24/7.
+          </p>
+          <p style={{ textAlign: "center", fontSize: 11, color: "var(--n-400)", marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
+            <Icon name="shield-check" size={13} /> WCAG 2.1 AA · All contrasts ≥ 4.5:1 verified
           </p>
         </div>
       </div>

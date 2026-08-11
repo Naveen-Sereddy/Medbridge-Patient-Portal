@@ -1,32 +1,22 @@
 /* MedBridge Portal — Auth screens, Dashboard, and UI states */
 
-function AuthLayout({ accent = "var(--brand-600)", accentDark = "var(--brand-800)", heroTitle, heroBody, pills, children }) {
+// ---- Reusable auth workspace. Full-bleed soft gradient wash (no cornered
+// blobs, no marketing panel) gives the whole canvas real atmosphere instead
+// of dead space; a top-left brand lockup is the one constant across all three
+// auth screens; each screen composes its own centered column of content.
+// tint distinguishes the recovery step (teal) from sign-in/request (brand),
+// echoing the original design's per-screen accent without a hero panel.
+function AuthWorkspace({ tint = "brand", children }) {
+  const bg = tint === "teal"
+    ? "radial-gradient(1000px circle at 14% 8%, var(--teal-bg) 0%, transparent 55%), radial-gradient(900px circle at 88% 94%, var(--brand-50) 0%, transparent 55%), var(--bg-page)"
+    : "radial-gradient(1000px circle at 14% 8%, var(--brand-50) 0%, transparent 55%), radial-gradient(900px circle at 88% 94%, var(--teal-bg) 0%, transparent 55%), var(--bg-page)";
   return (
-    <div style={{ display: "flex", height: "100%", width: "100%", background: "#fff", overflow: "hidden" }}>
-      {/* Brand panel */}
-      <div style={{ width: "44%", minWidth: 460, position: "relative", overflow: "hidden",
-        background: accent, color: "#fff", padding: "48px", display: "flex", flexDirection: "column" }}>
-        <div style={{ position: "absolute", inset: 0, background: accentDark, opacity: 0.4 }} />
-        <div style={{ position: "absolute", width: 320, height: 320, borderRadius: "50%", background: "rgba(255,255,255,0.05)", top: -80, left: -60 }} />
-        <div style={{ position: "absolute", width: 420, height: 420, borderRadius: "50%", background: "rgba(255,255,255,0.05)", bottom: -120, right: -100 }} />
-        <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 11 }}>
-          <BrandMark size={30} white />
-          <span style={{ fontSize: 19, fontWeight: 700, letterSpacing: "0.02em" }}>MedBridge</span>
-        </div>
-        <div style={{ position: "relative", marginTop: "auto", marginBottom: "auto" }}>
-          <h1 style={{ fontSize: 44, fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em", margin: 0, whiteSpace: "pre-line" }}>{heroTitle}</h1>
-          <p style={{ fontSize: 16, lineHeight: 1.55, color: "rgba(255,255,255,0.82)", marginTop: 22, maxWidth: 380, whiteSpace: "pre-line" }}>{heroBody}</p>
-        </div>
-        {pills && <div style={{ position: "relative", display: "flex", gap: 10, flexWrap: "wrap" }}>
-          {pills.map((p, i) => (
-            <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 7, padding: "8px 14px", borderRadius: 999,
-              background: "rgba(255,255,255,0.15)", fontSize: 12.5, fontWeight: 500 }}>
-              <Icon name={p.icon} size={15} />{p.label}</span>
-          ))}
-        </div>}
+    <div style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%", background: bg, overflow: "hidden" }}>
+      <div style={{ display: "flex", flex: "none", alignItems: "center", gap: 9, padding: "28px max(32px, 6%) 0" }}>
+        <BrandMark size={22} />
+        <span style={{ fontSize: 14, fontWeight: 700, letterSpacing: "-0.01em", color: "var(--fg-1)" }}>MedBridge</span>
       </div>
-      {/* Form panel */}
-      <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", padding: 40, overflowY: "auto" }}>
+      <div style={{ flex: 1, overflowY: "auto", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px 24px 56px" }}>
         <div style={{ width: "100%", maxWidth: 420 }}>{children}</div>
       </div>
     </div>
@@ -35,11 +25,8 @@ function AuthLayout({ accent = "var(--brand-600)", accentDark = "var(--brand-800
 
 function LoginScreen({ go }) {
   return (
-    <AuthLayout
-      heroTitle={"Your health,\nsimplified."}
-      heroBody={"Manage appointments, records, prescriptions, and billing — all in one secure place."}
-      pills={[{ icon: "shield-check", label: "Secure & Private" }, { icon: "heart", label: "Patient-First Design" }, { icon: "clock", label: "24/7 Access" }]}>
-      <h2 style={{ fontSize: 29, fontWeight: 700, margin: 0, letterSpacing: "-0.02em" }}>Welcome back</h2>
+    <AuthWorkspace>
+      <h2 style={{ fontSize: 29, fontWeight: 700, margin: 0, letterSpacing: "-0.02em", color: "var(--fg-1)" }}>Welcome back</h2>
       <p style={{ fontSize: 15, color: "var(--fg-3)", margin: "8px 0 0" }}>Sign in to your health portal</p>
       <div className="divider" style={{ margin: "24px 0" }} />
       <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
@@ -56,21 +43,27 @@ function LoginScreen({ go }) {
         <div className="divider" style={{ flex: 1 }} /><span style={{ fontSize: 12, color: "var(--n-400)" }}>or</span><div className="divider" style={{ flex: 1 }} />
       </div>
       <Button variant="outline-gray" block size="lg" icon="globe" onClick={() => go("dashboard")}>Continue with Google</Button>
-      <p style={{ textAlign: "center", fontSize: 14, color: "var(--fg-3)", marginTop: 24 }}>
+      <p style={{ fontSize: 14, color: "var(--fg-3)", marginTop: 24 }}>
         New patient? <button onClick={() => go("dashboard")} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--brand-600)", fontWeight: 600, fontSize: 14, fontFamily: "inherit" }}>Create your account →</button>
       </p>
-      <p style={{ textAlign: "center", fontSize: 11, color: "var(--n-400)", marginTop: 28, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
-        <Icon name="shield-check" size={13} /> WCAG 2.1 AA · All contrasts ≥ 4.5:1 verified</p>
-    </AuthLayout>
+      <div style={{ marginTop: 32 }}>
+        <div className="divider" />
+        <p style={{ fontSize: 11.5, color: "var(--n-400)", marginTop: 14, lineHeight: 1.6 }}>
+          Manage appointments, records, prescriptions, and billing — all in one secure, patient-first place, available 24/7.
+        </p>
+        <p style={{ fontSize: 11, color: "var(--n-400)", marginTop: 10, display: "flex", alignItems: "center", gap: 6 }}>
+          <Icon name="shield-check" size={13} /> WCAG 2.1 AA · All contrasts ≥ 4.5:1 verified</p>
+      </div>
+    </AuthWorkspace>
   );
 }
 
 function ForgotScreen({ go }) {
   return (
-    <AuthLayout heroTitle={"Forgot your\npassword?"} heroBody={"We'll send a secure reset link to your registered email within 2 minutes."}>
+    <AuthWorkspace tint="brand">
       <button onClick={() => go("login")} style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "none", border: "none", cursor: "pointer", color: "var(--brand-600)", fontWeight: 500, fontSize: 13, fontFamily: "inherit", padding: 0, marginBottom: 20 }}>
         <Icon name="arrow-left" size={15} /> Back to sign in</button>
-      <h2 style={{ fontSize: 26, fontWeight: 700, margin: 0, letterSpacing: "-0.01em" }}>Reset your password</h2>
+      <h2 style={{ fontSize: 26, fontWeight: 700, margin: 0, letterSpacing: "-0.01em", color: "var(--fg-1)" }}>Reset your password</h2>
       <p style={{ fontSize: 14, color: "var(--fg-3)", margin: "8px 0 24px", lineHeight: 1.5 }}>Enter your email and we'll send a reset link within 2 minutes.</p>
       <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
         <Field label="Registered email address"><Input value="beth.mooney@email.com" icon="mail" /></Field>
@@ -79,16 +72,16 @@ function ForgotScreen({ go }) {
       <div style={{ marginTop: 22 }}>
         <Alert kind="info" icon="info" title="Check your spam folder">Reset emails sometimes land in spam or promotions.</Alert>
       </div>
-      <p style={{ textAlign: "center", fontSize: 13, color: "var(--fg-3)", marginTop: 22 }}>
+      <p style={{ fontSize: 13, color: "var(--fg-3)", marginTop: 22 }}>
         Remembered it? <button onClick={() => go("login")} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--brand-600)", fontWeight: 600, fontSize: 13, fontFamily: "inherit" }}>Sign in instead →</button></p>
-    </AuthLayout>
+    </AuthWorkspace>
   );
 }
 
 function ResetScreen({ go }) {
   return (
-    <AuthLayout accent="var(--teal-600)" accentDark="#0A3D38" heroTitle={"Create a strong\nnew password"} heroBody={"Your new password is encrypted with AES-256 and never stored in plain text."}>
-      <h2 style={{ fontSize: 26, fontWeight: 700, margin: 0, letterSpacing: "-0.01em" }}>Set new password</h2>
+    <AuthWorkspace tint="teal">
+      <h2 style={{ fontSize: 26, fontWeight: 700, margin: 0, letterSpacing: "-0.01em", color: "var(--fg-1)" }}>Set new password</h2>
       <p style={{ fontSize: 14, color: "var(--fg-3)", margin: "8px 0 24px", lineHeight: 1.5 }}>Minimum 8 characters with a number and a special character.</p>
       <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
         <Field label="New password"><Input value="••••••••••" type="password" icon="lock" /></Field>
@@ -103,9 +96,9 @@ function ResetScreen({ go }) {
         </div>
         <Button block size="lg" icon="check" onClick={() => go("dashboard")}>Update Password</Button>
       </div>
-      <p style={{ textAlign: "center", fontSize: 12, color: "var(--n-400)", marginTop: 24, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
+      <p style={{ fontSize: 12, color: "var(--n-400)", marginTop: 24, display: "flex", alignItems: "center", gap: 6 }}>
         <Icon name="shield-check" size={13} /> Encrypted with AES-256</p>
-    </AuthLayout>
+    </AuthWorkspace>
   );
 }
 
@@ -306,4 +299,4 @@ function ErrorScreen({ go }) {
   );
 }
 
-Object.assign(window, { AuthLayout, LoginScreen, ForgotScreen, ResetScreen, DashboardScreen, DashAlertsScreen, DashLoadingScreen, EmptyApptScreen, ErrorScreen });
+Object.assign(window, { AuthWorkspace, LoginScreen, ForgotScreen, ResetScreen, DashboardScreen, DashAlertsScreen, DashLoadingScreen, EmptyApptScreen, ErrorScreen });
