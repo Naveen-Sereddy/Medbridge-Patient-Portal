@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "project": "MedBridge",
+  "portfolio": {
+    "slug": "case-medbridge",
+    "liveUrl": "/case-medbridge/ui_kits/portal/index.html"
+  },
+  "sync": {
+    "copyRules": [
+      {
+        "kind": "copy",
+        "source": "ui_kits/portal",
+        "target": "public/case-medbridge/ui_kits/portal",
+        "include": ["*.jsx", "index.html"],
+        "exclude": ["README.md", "portal-standalone-src.html"]
+      }
+    ],
+    "captureRules": [
+      {
+        "source": "ui_kits/portal/index.html",
+        "hash": "#dashboard",
+        "target": "src/assets/case/medbridge/ui-dashboard.png",
+        "viewport": { "width": 1440, "height": 900 }
+      },
+      {
+        "source": "ui_kits/portal/index.html",
+        "hash": "#login",
+        "target": "src/assets/case/medbridge/ui-signin.png",
+        "viewport": { "width": 1440, "height": 900 }
+      }
+    ]
+  }
+}
