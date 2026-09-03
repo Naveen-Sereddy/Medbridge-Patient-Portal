@@ -20,13 +20,43 @@
         "source": "ui_kits/portal/index.html",
         "hash": "#dashboard",
         "target": "src/assets/case/medbridge/ui-dashboard.png",
-        "viewport": { "width": 1440, "height": 900 }
+        "viewport": { "width": 1440, "height": 900 },
+        "deviceScaleFactor": 2
       },
       {
         "source": "ui_kits/portal/index.html",
         "hash": "#login",
         "target": "src/assets/case/medbridge/ui-signin.png",
-        "viewport": { "width": 1440, "height": 900 }
+        "viewport": { "width": 1440, "height": 900 },
+        "deviceScaleFactor": 2
+      },
+      {
+        "source": "ui_kits/portal/index.html",
+        "hash": "#doctors",
+        "target": "src/assets/case/medbridge/ui-doctors.png",
+        "viewport": { "width": 1440, "height": 900 },
+        "deviceScaleFactor": 2
+      },
+      {
+        "source": "ui_kits/portal/index.html",
+        "hash": "#billing",
+        "target": "src/assets/case/medbridge/ui-billing.png",
+        "viewport": { "width": 1440, "height": 900 },
+        "deviceScaleFactor": 2
+      },
+      {
+        "source": "ui_kits/portal/index.html",
+        "hash": "#settings",
+        "target": "src/assets/case/medbridge/ui-settings.png",
+        "viewport": { "width": 1440, "height": 900 },
+        "deviceScaleFactor": 2
+      },
+      {
+        "source": "ui_kits/portal/index.html",
+        "hash": "#mobile-home",
+        "target": "src/assets/case/medbridge/ui-mobile-home.png",
+        "viewport": { "width": 430, "height": 932 },
+        "deviceScaleFactor": 2
       }
     ]
   }
