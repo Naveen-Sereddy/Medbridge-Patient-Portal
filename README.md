@@ -1,6 +1,9 @@
 # MedBridge
 
-Patient portal redesign: appointments, prescriptions, medical records, billing, and secure messaging in one interface. A design system and a 25+ screen interactive prototype, no build step.
+MedBridge is a concept project exploring a patient portal that brings appointments, prescriptions,
+medical records, billing, and secure messaging into one calm flow. It includes a clinical design system,
+an interactive web and mobile prototype, and the architecture notes a production healthcare team would
+need before handling patient data.
 
 **Live case study:** [naveensereddy.com/case-medbridge](https://naveensereddy.com/case-medbridge)
 
@@ -20,18 +23,24 @@ Patient portal redesign: appointments, prescriptions, medical records, billing, 
 
 ## Features
 
-- 25+ screens covering dashboard, appointments (list, calendar, booking flow), find-a-doctor with provider profiles, medical records (vitals, conditions, allergies, test results, timeline), prescriptions and refills, billing and invoices, messages, notifications, and settings
+- 44 screens covering dashboard, appointments (list, calendar, booking flow), find-a-doctor with provider profiles, medical records (vitals, conditions, allergies, test results, timeline), prescriptions and refills, billing and invoices, messages, notifications, settings, and explicit loading, empty, error, and success states
 - A parallel mobile screen set (sign in, home, appointments, booking, prescriptions, messages) served under the same 600px breakpoint
 - A hash-based router that also drives which screen set (desktop or mobile) loads first
 - A floating screen directory (44 screens total) for jumping to any state directly, useful for review without clicking through the whole flow
+- HL7 FHIR R4 mapping for patient, appointment, observation, medication, coverage, and invoice view models in [`docs/05-fhir-data-architecture.md`](docs/05-fhir-data-architecture.md)
+- HIPAA-aware session, minimum-necessary, and delegated caregiver proxy-access governance in [`docs/06-hipaa-security-governance.md`](docs/06-hipaa-security-governance.md)
 
 ## Tech stack
 
-React 18.3 and Babel Standalone, both loaded from unpkg at runtime. No bundler, no package.json, no build step: open `index.html` and the browser transforms the JSX on the fly.
+React 18.3 and Babel Standalone are loaded from unpkg at runtime. The prototype stays dependency-light:
+`npm run check` verifies the screen registry, local assets, and design tokens, while `npm run dev` starts
+a dependency-free local server.
 
 Styling is plain CSS custom properties in `colors_and_type.css` (color roles, spacing, radii, motion timing, type scale) and component classes in `components.css`. Icons come from Lucide, also loaded from a CDN and re-rendered via `lucide.createIcons()` after every screen change.
 
-There's no backend. All patient, provider, appointment, and billing data is hardcoded in `lib.jsx` as plain JS objects and arrays.
+The repository contains mock patient, provider, appointment, and billing data in `lib.jsx`. It has no
+clinical backend and must not be connected to real PHI. The FHIR and privacy documents describe the
+production boundaries that would sit behind this interface.
 
 ## Project structure
 
@@ -59,7 +68,10 @@ assets/                 # logo files
 
 ## Why I built it this way
 
-No build step was a deliberate choice: the whole point is that anyone can clone the repo and open `index.html` with zero setup. The tradeoff is real, in-browser Babel transform is slower than a compiled bundle, and it wouldn't scale past a prototype of this size. For 30-ish screens it's fine.
+Keeping the prototype free of a bundler is deliberate: reviewers can clone the repo and open the portal
+without a dependency install. The tradeoff is real. In-browser Babel is slower than a compiled bundle,
+and this approach would not scale beyond a prototype of this size. For 44 reviewable screens it keeps the
+architecture easy to inspect.
 
 The sidebar is a deep navy (`#0F1B2D`) against a near-white page background (`#F8FAFC`). That contrast anchors the layout and keeps the content area feeling open rather than cramped. Typography is Hanken Grotesk, which reads friendlier than Inter at smaller sizes while staying legible in a medical context. Clinical values (blood pressure, vitals, lab results) use tabular figures so numbers stay optically aligned in tables.
 
@@ -69,7 +81,8 @@ All text passes WCAG 2.1 AA contrast ratios, interactive elements have 44px mini
 
 ## Getting started
 
-Open `ui_kits/portal/index.html` in any modern browser. No install, no build.
+Run `npm run check` to verify the prototype, then `npm run dev` and open the printed local URL. You can
+also open `ui_kits/portal/index.html` directly in a modern browser.
 
 ## Future improvements
 

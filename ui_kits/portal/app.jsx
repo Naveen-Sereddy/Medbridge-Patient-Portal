@@ -24,6 +24,10 @@ const SCREENS = {
 const MOBILE_ROUTES = new Set([
   "m-login", "m-home", "m-appointments", "m-book", "m-appt-confirmed", "m-prescriptions", "m-messages", "m-thread",
 ]);
+// Public prototype links use a descriptive hash for the mobile landing screen;
+// keep the internal route name short for the screen directory and navigation.
+const ROUTE_ALIASES = { "mobile-home": "m-home" };
+const normalizeRoute = (route) => ROUTE_ALIASES[route] || route;
 const isMobileViewport = () => window.innerWidth <= 600;
 
 const DIRECTORY = [
@@ -73,7 +77,7 @@ function ScreenLauncher({ route, go }) {
 }
 
 function App() {
-  const initial = (location.hash || "").replace("#", "") || (isMobileViewport() ? "m-login" : "login");
+  const initial = normalizeRoute((location.hash || "").replace("#", "")) || (isMobileViewport() ? "m-login" : "login");
   const [route, setRoute] = React.useState(SCREENS[initial] ? initial : "login");
   const go = React.useCallback((r) => {
     // Same device-width routing as the case study's other prototypes: a phone
@@ -88,7 +92,7 @@ function App() {
   }, []);
 
   React.useEffect(() => {
-    const onHash = () => { const r = (location.hash || "").replace("#", ""); if (SCREENS[r]) setRoute(r); };
+    const onHash = () => { const r = normalizeRoute((location.hash || "").replace("#", "")); if (SCREENS[r]) setRoute(r); };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
   }, []);

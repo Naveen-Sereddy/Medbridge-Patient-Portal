@@ -37,7 +37,7 @@ body {
    ============================================================================ */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  height: 42px; padding: 0 18px;
+  min-height: 44px; padding: 0 18px;
   font-family: inherit; font-size: var(--text-body); font-weight: var(--weight-semi);
   line-height: 1; border-radius: var(--radius-md); border: 1.5px solid transparent;
   cursor: pointer; white-space: nowrap; user-select: none;
@@ -68,14 +68,14 @@ body {
 .btn-danger:hover { filter: brightness(0.92); }
 
 .btn-block { width: 100%; }
-.btn-sm { height: 34px; padding: 0 12px; font-size: var(--text-sm); }
-.btn-lg { height: 48px; padding: 0 24px; font-size: var(--text-body-lg); }
+.btn-sm { min-height: 44px; padding: 0 12px; font-size: var(--text-sm); }
+.btn-lg { min-height: 48px; padding: 0 24px; font-size: var(--text-body-lg); }
 .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
 /* Icon-only button */
 .btn-icon {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px; border-radius: var(--radius-md);
+  width: 44px; height: 44px; border-radius: var(--radius-md);
   background: var(--n-100); color: var(--n-600); border: none; cursor: pointer;
   transition: background var(--dur-fast) var(--ease-out);
   position: relative;
