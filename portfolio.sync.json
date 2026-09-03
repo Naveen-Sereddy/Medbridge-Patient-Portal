@@ -56,7 +56,7 @@
         "hash": "#mobile-home",
         "target": "src/assets/case/medbridge/ui-mobile-home.png",
         "viewport": { "width": 430, "height": 932 },
-        "deviceScaleFactor": 2
+        "deviceScaleFactor": 4
       }
     ]
   }
