@@ -1,9 +1,15 @@
 # MedBridge
 
+[![Verify MedBridge](https://github.com/Naveen-Sereddy/Medbridge-Patient-Portal/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/Naveen-Sereddy/Medbridge-Patient-Portal/actions/workflows/verify.yml)
+
 MedBridge is a concept project exploring a patient portal that brings appointments, prescriptions,
 medical records, billing, and secure messaging into one calm flow. It includes a clinical design system,
 an interactive web and mobile prototype, and the architecture notes a production healthcare team would
 need before handling patient data.
+
+**Project type:** Fictional healthcare product prototype and design-system case study.
+
+**Data and compliance boundary:** All patient, provider, appointment, and billing records are synthetic. This repository contains no PHI, production backend, live clinical integration, or HIPAA certification. FHIR behavior and privacy governance are conceptual architecture documentation.
 
 **Live case study:** [naveensereddy.com/case-medbridge](https://naveensereddy.com/case-medbridge)
 
@@ -65,6 +71,15 @@ assets/                 # logo files
 ## Architecture
 
 `app.jsx` holds a `SCREENS` object mapping route names to components, and reads the initial route from `location.hash` (falling back to a mobile or desktop login screen based on viewport width). Every screen component pulls its data straight from the arrays in `lib.jsx`, there's no fetch layer or async loading since everything's static and in-memory. Icon rendering has to be re-triggered manually after each screen swap because Lucide converts `<i data-lucide>` tags to SVG on mount, and React re-renders don't re-trigger that pass on their own.
+
+## Documentation
+
+- [Design and product decisions](docs/01-design-and-product.md)
+- [Engineering handoff](docs/03-engineering-handoff.md)
+- [Case-study narrative](docs/04-case-study-and-story.md)
+- [FHIR data architecture](docs/05-fhir-data-architecture.md)
+- [HIPAA security governance](docs/06-hipaa-security-governance.md)
+- [Portal source and runtime notes](ui_kits/portal/README.md)
 
 ## Why I built it this way
 
