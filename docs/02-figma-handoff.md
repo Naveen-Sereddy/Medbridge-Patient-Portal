@@ -1,6 +1,6 @@
 # 02 · Figma Export & Organization Plan
 
-> Mirrors the built design system (`colors_and_type.css`, `components.css`) and the 30-screen prototype.
+> Mirrors the built design system (`colors_and_type.css`, `components.css`) and the 44-screen prototype.
 
 ## Figma file structure
 ```
@@ -88,7 +88,7 @@ avatar placeholder. Everything else is component instances, not flattened assets
 exports/
 ├── logo/        (svg + png fallbacks)
 ├── icon/        (svg, 24px grid)
-├── screen/      (png @2x — all 30 screens)
+├── screen/      (png @2x — all 44 screens)
 ├── component/   (png @2x — component boards)
 ├── marketing/   (png @1x/@2x/@3x — hero shots)
 └── img/         (webp + png — photos/illustrations)

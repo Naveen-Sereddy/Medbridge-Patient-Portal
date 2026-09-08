@@ -21,7 +21,7 @@ I'd carry the same token system forward into:
 
 ## Component inventory
 
-Every component used in the 30 screens is in `ui_kits/portal/`. The core set that covers the
+Every component used in the 44 screens is in `ui_kits/portal/`. The core set that covers the
 entire product:
 
 **Layout:** `AppShell`, `Sidebar`, `TopNav`, `PageShell`
@@ -74,5 +74,5 @@ These were designed in, not bolted on — make sure they survive the build:
 
 ## Prototype reference
 
-`ui_kits/portal/index.html` — open in any modern browser, no build step. All 30 screens
+`ui_kits/portal/index.html` — open in any modern browser, no build step. All 44 screens
 are clickable. The prototype is the source of truth for interaction patterns and states.

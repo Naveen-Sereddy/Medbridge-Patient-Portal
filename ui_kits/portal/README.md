@@ -7,10 +7,10 @@ tokens (`/colors_and_type.css`, `/components.css`) and Lucide icons.
 ## Run it
 Open `index.html`. It boots at the **Login** screen. Navigate using the app's own sidebar and
 in-screen actions, or use the floating **▦ screen-directory launcher** (bottom-right) to jump to any
-of the 30 screens — including the states that aren't on a normal navigation path (loading, empty,
+of the 44 screens, including the states that aren't on a normal navigation path (loading, empty,
 error, success).
 
-## Screens (30)
+## Screens (44)
 **Auth** — Login · Forgot Password · Reset Password
 **Dashboard** — Dashboard · Health-Alerts variant · Loading (skeleton) · Error state
 **Appointments** — List · Calendar · Details · Cancel confirmation · Empty state
@@ -38,6 +38,11 @@ error, success).
 Components export to `window` so each Babel `<script>` shares scope. To reuse a component in a new
 design, copy the relevant `.jsx` + the two root CSS files, or lift the class names straight from
 `components.css`.
+
+The canonical runnable entry point is `index.html`, which loads the files above in dependency order.
+`portal-standalone-src.html` is a separate standalone source bundle retained for reference; it is not
+part of the normal portal entry point. The `preview/` and `case-study/` directories contain supporting
+artifacts rather than runtime dependencies.
 
 ## Fidelity notes
 - **Source of truth:** the original `MedBridge-Figma-Plugin/code.js`. Workflows, IA, copy, persona

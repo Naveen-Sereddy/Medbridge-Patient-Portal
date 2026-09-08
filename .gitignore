@@ -18,3 +18,21 @@
 *.log
 
 uploads/
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Package-manager logs and local caches
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+.cache/

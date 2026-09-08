@@ -3,14 +3,14 @@
 ## Project overview
 **MedBridge** is a secure, patient-facing healthcare portal that consolidates appointments, providers,
 prescriptions, medical records, billing, and secure messaging into one calm, trustworthy web app.
-This project elevated an existing 25-screen generator into a **portfolio-grade design system + a
-30-screen interactive prototype**, preserving every workflow while raising visual fidelity, spacing,
+This project elevated an existing generator into a **portfolio-grade design system + a
+44-screen interactive prototype**, preserving every workflow while raising visual fidelity, spacing,
 typography, accessibility, and component consistency to production quality.
 
 - **Surface:** Responsive desktop web app (1440-px reference), patient role.
 - **Deliverables:** Tokenized design system (`colors_and_type.css`, `components.css`), reusable React
-  component library, 30 screens incl. loading/empty/error/success/confirmation states, brand system.
-- **North-star metric:** time-to-book an appointment (baseline 4.2 min → target/observed 2.1 min).
+  component library, 44 screens including loading/empty/error/success/confirmation states, brand system.
+- **North-star metric:** time-to-book an appointment (4.2 min → documented target of about 2.1 min; not a production measurement).
 - **Compliance posture:** WCAG 2.1 AA; HIPAA-aware UX patterns.
 
 ## Product vision

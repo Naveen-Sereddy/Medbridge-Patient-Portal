@@ -1,24 +1,23 @@
 # 04 · Portfolio Case Study & Project Story
 
-## Portfolio case study — MedBridge Patient Portal
+## Portfolio case study: MedBridge Patient Portal
 
 **Role:** Product Designer (UX/UI) + Design Systems + Prototyping · **Type:** Healthcare web app ·
-**Deliverables:** Design system, 30 desktop screens, interactive prototype · **Tools:** Design tokens,
+**Deliverables:** Design system, 44 interactive screens across desktop and mobile, interactive prototype · **Tools:** Design tokens,
 component library, Hanken Grotesk, Lucide.
 
 ### Executive summary
 MedBridge is a patient portal that unifies appointments, providers, prescriptions, records, billing,
-and secure messaging into one calm, trustworthy experience. I elevated an existing 25-screen baseline
-into a portfolio-grade **design system + 30-screen interactive prototype**, preserving every workflow
-while raising fidelity, accessibility, and consistency. Headline outcome: **appointment booking
-redesigned from a 4.2-minute to a ~2.1-minute task**, with a full WCAG 2.1 AA pass and a reusable
-component system.
+and secure messaging into one calm, trustworthy experience. I elevated an existing baseline into a
+portfolio-grade **design system + 44-screen interactive prototype**, preserving every workflow while
+raising fidelity, accessibility, and consistency. The documented planning target was to reduce
+appointment booking from 4.2 minutes to about 2.1 minutes; it is not a production measurement.
 
 ### Problem
 Patient health admin is fragmented and anxiety-inducing: opaque booking, buried records, refill phone
 tag, confusing bills, and hard-to-reach providers. The baseline product had the right workflows but
 cramped type (down to 10–11px), placeholder icons, a flat single-shadow visual language, and no
-defined states — it read as a wireframe, not a product patients would trust with their health.
+defined states. It read as a wireframe, not a product patients would trust with their health.
 
 ### Research
 Grounded in established patient-portal findings and a heuristic audit of the baseline + competitors
@@ -48,7 +47,7 @@ receipt). Each ends in an explicit success state. (Flow tables in `01-design-and
 ### Wireframes → high-fidelity
 The baseline acted as low-fi structure. I kept the information architecture and rebuilt every screen
 at high fidelity: a 4-px spacing system, a 1.2 type scale, layered navy-tinted elevation, semantic
-color, and real iconography — plus the states the baseline lacked (loading, empty, error, success,
+color, and real iconography, plus the states the baseline lacked (loading, empty, error, success,
 confirmation).
 
 ### Design system
@@ -56,7 +55,7 @@ confirmation).
 - **Type:** Hanken Grotesk, full scale, tabular figures for clinical data.
 - **Spacing/Radius/Elevation:** 4-px grid; 6/8/12/16/pill radii; 5-step soft shadow scale.
 - **Components:** buttons, badges, cards, fields, toggles, tabs, alerts, stats, avatars, tables,
-  sidebar/topnav — all tokenized and reused across 30 screens.
+  sidebar/topnav, all tokenized and reused across 44 screens.
 - **Icons/Logo:** Lucide set; recreated the real MedBridge cross-and-bridge mark as clean vector.
 
 ### Before → after (highlights)
@@ -66,7 +65,7 @@ confirmation).
 | Icons | Emoji + placeholder rectangles | Lucide stroke icon system |
 | States | None | Loading / empty / error / success / confirmation |
 | Color | Hardcoded RGBs | Semantic token system, AA-verified |
-| Screens | 25 static frames | 30 interactive screens + component library |
+| Screens | 25 static frames | 44 interactive screens + component library |
 
 ### Challenges → solutions
 - **Cramped, low-trust baseline →** built a token system first, then rebuilt screens against it for
@@ -78,13 +77,13 @@ confirmation).
   never-color-alone status, reduced-motion support.
 
 ### Results
-- Booking task time **4.2 → ~2.1 min** (target).
-- **30** production-quality screens incl. all UX states.
+- Booking task time **4.2 → ~2.1 min** (documented target, not a production measurement).
+- **44** reviewable prototype screens including the documented UX states.
 - **WCAG 2.1 AA** across the system.
 - A reusable component library that lets new screens ship in hours, not days.
 
 ### Lessons learned
-- Design the **system before the screens** — tokens paid for themselves immediately.
+- Design the **system before the screens**. Tokens paid for themselves immediately.
 - In healthcare, **states are the product**; trust is won in empty/error/success moments.
 - **Restraint with color** reads as competence; meaning beats decoration.
 - Document substitutions (font/icons) so stakeholders can course-correct without rework.
